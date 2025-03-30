@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
      protected BoundsCheck bndCheck;
 
-     void Awake() { 
+     protected virtual void Awake() { 
        bndCheck = GetComponent<BoundsCheck>();
      }
 
@@ -46,10 +46,21 @@ public class Enemy : MonoBehaviour
      void OnCollisionEnter( Collision coll ) {
          GameObject otherGO = coll.gameObject;                                  // a
          if ( otherGO.GetComponent<ProjectileHero>() != null ) {                // b
+             // Award score when enemy is destroyed by projectile
+             if (ScoreManager.S != null) {
+                 ScoreManager.S.AddScore(score);
+             }
              Destroy( otherGO );      // Destroy the Projectile
              Destroy( gameObject );   // Destroy this Enemy GameObject 
          } else {
              Debug.Log( "Enemy hit by non-ProjectileHero: " + otherGO.name );  // c
+         }
+     }
+     
+     // Method to award score when destroyed by any means
+     public void AwardScore() {
+         if (ScoreManager.S != null) {
+             ScoreManager.S.AddScore(score);
          }
      }
 

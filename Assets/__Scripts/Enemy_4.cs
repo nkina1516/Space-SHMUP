@@ -23,6 +23,9 @@ public class Enemy_4 : Enemy {    // Enemy_4 also extends the Enemy class
         p0 = p1 = pos;
         // a
         InitMovement();
+        
+        // Set a different score value for this enemy type
+        score = 500; // Most difficult enemy type with highest score
     }
 
     void InitMovement() {

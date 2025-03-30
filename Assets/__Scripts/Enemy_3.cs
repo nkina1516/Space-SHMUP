@@ -43,6 +43,9 @@ public class Enemy_3 : Enemy
          birthTime = Time.time;
 
          if ( drawDebugInfo ) DrawDebug();                                           // b
+         
+         // Set a different score value for this enemy type
+         score = 300; // More difficult enemy with higher score
      }
 
     public override void Move() {

@@ -20,11 +20,14 @@ public class Enemy_1 : Enemy
          x0 = pos.x;                                                           // c
 
          birthTime = Time.time;
+         
+         // Set a different score value for this enemy type
+         score = 100; // Medium difficulty enemy
      }
 
    // Override the Move function on Enemy
      public override void Move() {                                             // d
-         // Because pos is a property, you can’t directly set pos.x
+         // Because pos is a property, you can't directly set pos.x
          //   so get the pos as an editable Vector3
          Vector3 tempPos = pos;
          // theta adjusts based on time

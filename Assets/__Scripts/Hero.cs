@@ -23,7 +23,7 @@ public class Hero : MonoBehaviour
      private GameObject lastTriggerGo = null;                                  
     void Awake() {
          if (S == null) {
-             S = this; // Set the Singleton only if it’s null                  
+             S = this; // Set the Singleton only if it's null                  
          } else {
              Debug.LogError("Hero.Awake() - Attempted to assign second Hero.S!");
          }
@@ -66,6 +66,7 @@ public class Hero : MonoBehaviour
          Enemy enemy = go.GetComponent<Enemy>();                               // e
          if (enemy != null) {  // If the shield was triggered by an enemy
              shieldLevel--;        // Decrease the level of the shield by 1
+             enemy.AwardScore();   // Award score for destroying the enemy
              Destroy(go);          // … and Destroy the enemy                  // f
          } else {
              Debug.LogWarning("Shield trigger hit by non-Enemy: "+go.name);    // g

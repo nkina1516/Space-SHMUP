@@ -16,7 +16,7 @@ public class Enemy_2 : Enemy
      [SerializeField] private float   birthTime; // Interpolation start time   // b
 
      private Quaternion      baseRotation;
-     [SerializeField] private Vector3 p0, p1;    // Lerp_points”
+     [SerializeField] private Vector3 p0, p1;    // Lerp_points"
 
 
 
@@ -24,7 +24,6 @@ public class Enemy_2 : Enemy
     void Start()
     {
         // Pick any point on the left side of the screen
-         p0 = Vector3.zero;                                                    // c
          p0.x = -bndCheck.camWidth - bndCheck.radius;
          p0.y = Random.Range( -bndCheck.camHeight, bndCheck.camHeight );
 
@@ -48,7 +47,9 @@ public class Enemy_2 : Enemy
          transform.position = p0;
          transform.LookAt(p1, Vector3.back);
          baseRotation = transform.rotation;
-
+         
+         // Set a different score value for this enemy type
+         score = 200; // More challenging enemy
     }
 
     public override void Move() { 
