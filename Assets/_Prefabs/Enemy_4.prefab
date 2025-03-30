@@ -1169,6 +1169,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f2cc4e0803564edc9108438652273e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 10
+  fireRate: 0.3
+  health: 0
+  score: 100
+  duration: 4
 --- !u!114 &7154589422415426480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,8 +1186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79d3a59e4e9344e36998a0685d1e72f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boundsType: 2
-  radius: 2.5
+  boundsType: 1
+  radius: 8
   keepOnScreen: 0
   screenLocs: 0
   camWidth: 0
